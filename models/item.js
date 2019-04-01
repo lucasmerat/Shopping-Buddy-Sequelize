@@ -1,26 +1,15 @@
-const orm = require("../config/orm");
-
-const item = {
-  show: function(cb) {
-    orm.selectAll("items", function(res) {
-      cb(res);
-    });
-  },
-  add: function(col1, val1, cb) {
-    orm.insertOne("items", col1, val1, function(res) {
-      cb(res);
-    });
-  },
-  update: function(newBoolean, condition, cb) {
-    orm.updateOne("items", newBoolean, condition, function(res) {
-      cb(res);
-    });
-  },
-  delete: function(col1, val1, cb) {
-    orm.deleteOne("items", col1, val1, function(res) {
-      cb(res);
-    });
-  }
+module.exports = function(sequelize, DataTypes) {
+  var Items = sequelize.define("Item", {
+    item_name: {
+      type: DataTypes.STRING,
+      validate:{
+        len: [1,140]
+      }
+    },
+    purchased: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    } 
+  });
+  return Items;
 };
-
-module.exports = item;
