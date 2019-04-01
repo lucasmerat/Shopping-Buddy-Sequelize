@@ -4,15 +4,15 @@ $(document).ready(
     let isPurchased = $(this).data("purchased");
     console.log(isPurchased);
     //Checks which list the item is in and updates the purchase state accordingly
-    if (isPurchased === 0) {
+    if (isPurchased === false) {
       let newPurchasedState = {
-        purchased: 1
+        purchased: true
       };
       updatePurchased(newPurchasedState);
     }
-    if (isPurchased === 1) {
+    if (isPurchased === true) {
       let newPurchasedState = {
-        purchased: 0
+        purchased: false
       };
       updatePurchased(newPurchasedState);
     }
