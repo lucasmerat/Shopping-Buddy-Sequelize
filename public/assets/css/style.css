@@ -1,0 +1,90 @@
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  background-color: #0d5080;
+}
+
+header {
+  color: white;
+  background-color: #2b6894;
+  padding: 20px 0px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.add-form {
+  margin-top: 33.227px;
+  margin-bottom: 0px !important;
+}
+.title {
+  margin: 0;
+}
+
+.collection-item {
+  display: flex;
+  align-items: unset;
+  justify-content: space-between;
+  background-color: #2b6894 !important;
+  color: white;
+}
+
+.item-name {
+  width: 75%;
+  font-size: 21px;
+  display: flex;
+  align-items: center;
+}
+.buttons {
+  display: flex;
+  width: 24%;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.button-box{
+    padding-left: 0px !important;
+}
+
+.form-box {
+  display: flex;
+  flex-direction: row;
+}
+
+.add-burger-button {
+  width: 33%;
+}
+
+.section {
+  color: white;
+}
+
+.new-item {
+  color: white;
+}
+
+input::placeholder {
+  color: white !important;
+}
+
+.input-field input[type="text"] {
+  border-bottom: 1px solid white !important;
+  box-shadow: 0 1px 0 0 white !important;
+}
+
+.input-field input[type="text"]:focus {
+  border-bottom: 1px solid #ab05b6 !important;
+  box-shadow: 0 1px 0 0 #ab05b6 !important;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 576px){
+        h1{
+            font-size: 3em;
+        }
+        h2{
+            font-size: 2.5em;
+        }
+        .buttons{
+            width: 40%;
+            justify-content: space-between;
+        }
+    }

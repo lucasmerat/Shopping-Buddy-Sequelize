@@ -1,0 +1,62 @@
+<header>
+    <h1 class="title center"><i class="fas fa-shopping-cart"></i> Shopping Buddy</h1>
+</header>
+<div class="container">
+    <div class="row add-form">
+        <div class="input-field col l5 offset-l3 s10">
+            <input type="text" class="new-item" placeholder="Add an item to your current list..." />
+        </div>
+        <div class="button-box input-field col l2 s2">
+            <a class="add-item-button btn-floating btn-large waves-effect waves-light purple"><i
+                    class="fas fa-plus"></i></a>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col s12 l6">
+            <h2 class="section center">Current List</h2>
+            <ul class="collection">
+
+                {{#each item}}
+                {{#unless purchased}}
+                <li class="collection-item">
+                    <div class="item-name">
+                        {{item_name}}
+                    </div>
+                    <a class="purchase-item btn-small waves-light waves-effect purple lighten" data-id="{{id}}"
+                        data-purchased="{{purchased}}"><i class="fas fa-check"></i></a>
+                </li>
+                {{/unless}}
+                {{/each}}
+            </ul>
+
+        </div>
+        <div class="col s12 l6">
+
+            <h2 class="section center">Completed items</h2>
+            <ul class="collection">
+                {{#each item}}
+                {{#if purchased}}
+                <li class="collection-item">
+                    <div class="item-name">
+                        {{item_name}}
+                    </div>
+                    <div class="buttons">
+                        <a class="purchase-item btn-small waves-light waves-effect purple lighten"
+                            data-purchased="{{purchased}}" data-id="{{id}}"><i class="fas fa-plus"></i></a>
+                        <a class="delete btn-small waves-light waves-effect purple lighten"
+                            data-purchased="{{purchased}}" data-id="{{id}}"><i class="far fa-trash-alt"></i></a>
+                    </div>
+                </li>
+                {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+
+
+
+
+
+
+</div>
