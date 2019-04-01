@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Shopping Buddy
 
 ![header image](/public/assets/imgs/teaser.png)
@@ -19,3 +20,6 @@ This app was created for week 13 of UT Austin coding bootcamp. The focus of the 
 - [jQuery](https://jquery.com/)
 - [Handlebars](https://handlebarsjs.com/)
 - [Materialize](http://materializecss.com/)
+=======
+# Shopping-Buddy-Sequelize
+>>>>>>> f924395b2ca873e611d8229bbddf4e98efe53cab
