@@ -1,16 +1,30 @@
-const item = require("../models/item");
 const express = require("express");
+const db = require("../models")
 
 const router = express.Router();
 
 router.get("/", function(req, res) {
-  item.show(function(data) {
+
+  db.Item.findAll({}).then(function(results){
     let handleObject = {
-      item: data
-    };
-    console.log(handleObject);
-    res.render("index", handleObject);
+          item: results
+        }
+    res.render("index", handleObject)
   });
+});
+
+router.post("/api/items", function(req, res) {
+  let item = req.body.item_name;
+  console.log("The item we are adding is: " + item)
+  db.Item.create({
+    item_name: item
+  }).then(function(result){
+    console.log(result)
+    res.json(result)
+  })
+  // item.add(col1, itemName, function(result) {
+  //   res.json({ id: result.insertId });
+  // });
 });
 
 router.put("/api/items/:id", function(req, res) {
@@ -24,15 +38,6 @@ router.put("/api/items/:id", function(req, res) {
     } else {
       res.status(200).end();
     }
-  });
-});
-
-router.post("/api/items", function(req, res) {
-  let col1 = "item_name";
-  let itemName = req.body.item_name;
-  console.log(itemName);
-  item.add(col1, itemName, function(result) {
-    res.json({ id: result.insertId });
   });
 });
 
